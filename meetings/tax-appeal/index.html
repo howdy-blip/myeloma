@@ -3,11 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; url=/myeloma_tax_appeal_meeting_agenda.html">
-  <title>Tax Appeal Meeting - Myeloma Australia</title>
+  <title>Tax Appeal Meeting – Myeloma Australia</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f4f8;
+      font-family: Arial, sans-serif;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      padding: 2.5rem 2rem;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #1a3a5c;
+      margin-bottom: 0.25rem;
+    }
+    .subtitle {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1.75rem;
+    }
+    h2 {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 1.25rem;
+    }
+    label {
+      display: block;
+      text-align: left;
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 0.4rem;
+    }
+    input[type="password"] {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input[type="password"]:focus { border-color: #1a3a5c; }
+    button {
+      width: 100%;
+      padding: 0.7rem;
+      background: #1a3a5c;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background: #254d7a; }
+    .error {
+      color: #c0392b;
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+      display: none;
+    }
+  </style>
 </head>
 <body>
-  <p>Redirecting to the Tax Appeal Meeting page...</p>
-  <p>If not redirected, <a href="/myeloma_tax_appeal_meeting_agenda.html">click here</a>.</p>
+  <div class="card">
+    <div class="logo">Myeloma Australia</div>
+    <div class="subtitle">Tax Appeal Meeting</div>
+    <h2>This page is password protected</h2>
+    <label for="pwd">Password</label>
+    <input type="password" id="pwd" placeholder="Enter password" onkeydown="if(event.key==='Enter')check()">
+    <button onclick="check()">Access Meeting</button>
+    <div class="error" id="err">Incorrect password. Please try again.</div>
+  </div>
+  <script>
+    function check() {
+      var input = document.getElementById('pwd').value;
+      var err = document.getElementById('err');
+      if (input === 'My3l0m@2026!') {
+        window.location.href = '/myeloma_tax_appeal_meeting_agenda.html';
+      } else {
+        err.style.display = 'block';
+        document.getElementById('pwd').value = '';
+        document.getElementById('pwd').focus();
+      }
+    }
+  </script>
 </body>
 </html>
