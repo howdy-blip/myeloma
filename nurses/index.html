@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nurse Resource Hub | Myeloma Australia</title>
+  <meta name="description" content="Download presentations and access editable Canva files from Myeloma Australia for health professionals, patients and carers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple: #45057d;
+      --purple-dark: #2f0357;
+      --bg: #f8f3f3;
+      --text: #2b2433;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg) url("assets/background.jpg") center / cover no-repeat fixed;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    header { text-align: center; margin-bottom: 40px; }
+    header img { width: 260px; max-width: 70%; height: auto; }
+
+    .intro { text-align: center; max-width: 720px; margin: 0 auto 48px; }
+    .intro h1 { color: var(--purple); font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 600; margin: 0 0 12px; line-height: 1.2; }
+    .intro p { margin: 0 0 12px; font-size: 1.02rem; }
+
+    details.section {
+      background: rgba(248, 243, 243, 0.92);
+      border: 2px solid var(--purple);
+      border-radius: 14px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    details.section > summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 28px;
+      color: var(--purple);
+      font-size: clamp(1.3rem, 3vw, 1.75rem);
+      font-weight: 600;
+    }
+    details.section > summary::-webkit-details-marker { display: none; }
+    details.section > summary:focus-visible { outline: 3px solid var(--purple); outline-offset: -6px; }
+    .chev {
+      flex: none; width: 36px; height: 36px; border-radius: 50%;
+      background: var(--purple); color: #fff;
+      display: grid; place-items: center;
+      transition: transform .25s ease;
+    }
+    details[open] > summary .chev { transform: rotate(180deg); }
+    .count { font-size: .85rem; font-weight: 500; opacity: .75; margin-left: 10px; }
+
+    .items { padding: 0 28px 28px; display: grid; gap: 16px; }
+    .item {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      border: 1.5px solid var(--purple); border-radius: 10px;
+      padding: 18px 22px 18px 32px; background: var(--bg);
+    }
+    .item h3 { margin: 0; color: var(--purple); font-size: 1.3rem; font-weight: 600; }
+    .actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; text-align: center; text-decoration: none;
+      background: var(--purple); color: #fff;
+      font-weight: 500; font-size: 1rem;
+      padding: 12px 28px; border-radius: 8px; min-width: 210px;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .btn:hover { background: var(--purple-dark); transform: translateY(-1px); }
+    .btn:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
+    .empty { margin: 0; padding: 4px 4px 0; font-style: italic; opacity: .8; }
+
+    footer { text-align: center; font-size: .85rem; margin-top: 48px; opacity: .8; }
+    footer a { color: var(--purple); }
+
+    @media (max-width: 720px) {
+      body { background-attachment: scroll; }
+      .wrap { padding: 32px 16px 56px; }
+      details.section > summary { padding: 18px 20px; }
+      .items { padding: 0 16px 20px; }
+      .item { flex-direction: column; align-items: stretch; padding: 18px; }
+      .actions { flex-direction: column; }
+      .btn { width: 100%; min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a href="https://myeloma.org.au" aria-label="Myeloma Australia website">
+        <img src="assets/myeloma-australia-logo.png" alt="Myeloma Australia" width="1000" height="433">
+      </a>
+    </header>
+
+    <section class="intro">
+      <h1>Nurse Resource Hub</h1>
+      <p>Welcome to the Myeloma Australia resource hub for nurses. Here you'll find presentations to support education for health professionals, as well as for patients and their carers.</p>
+      <p>Open a category below to see what's available. Each resource can be downloaded as a PowerPoint, or opened in Canva so you can tailor it to your own setting.</p>
+    </section>
+
+    <details class="section">
+      <summary>
+        <span>Health Professionals</span>
+        <span class="chev" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </summary>
+      <div class="items">
+        <div class="item">
+          <h3>Elranatamab</h3>
+          <div class="actions">
+            <a class="btn" href="assets/Elranatamab.pptx" download>Download PowerPoint</a>
+            <a class="btn" href="https://canva.link/rxulw9cse2b2hhx" target="_blank" rel="noopener">Access Canva file</a>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="section">
+      <summary>
+        <span>Patient &amp; Carer</span>
+        <span class="chev" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </summary>
+      <div class="items">
+        <p class="empty">Resources for patients and carers are coming soon.</p>
+      </div>
+    </details>
+
+    <footer>
+      &copy; Myeloma Australia &middot; <a href="https://myeloma.org.au" target="_blank" rel="noopener">myeloma.org.au</a>
+    </footer>
+  </div>
+</body>
+</html>
