@@ -13,6 +13,8 @@
       --purple: #45057d;
       --purple-dark: #2f0357;
       --bg: #f8f3f3;
+      --pink: #e5208c;
+      --light: #faf4f4;
       --text: #2b2433;
     }
     * { box-sizing: border-box; }
@@ -82,15 +84,16 @@
     .btn:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
     .empty { margin: 0; padding: 4px 4px 0; font-style: italic; opacity: .8; }
 
-    .font-card {
-      display: flex; align-items: center; justify-content: space-between; gap: 20px;
-      background: rgba(248, 243, 243, 0.92);
-      border: 2px solid var(--purple); border-radius: 14px;
-      padding: 22px 28px; margin-top: 36px;
-    }
-    .font-card h2 { margin: 0 0 4px; color: var(--purple); font-size: 1.3rem; font-weight: 600; }
-    .font-card p { margin: 0; font-size: .92rem; }
-    .font-card .actions { flex: none; flex-wrap: nowrap; }
+    details.section.font { background: var(--pink); border-color: var(--pink); }
+    details.section.font > summary { color: var(--light); }
+    details.section.font > summary:focus-visible { outline-color: var(--light); }
+    details.section.font .chev { background: var(--light); color: var(--pink); }
+    .font-body { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--light); }
+    .font-body p { margin: 0; }
+    .font-body .actions { flex: none; }
+    details.section.font .btn { background: var(--light); color: var(--pink); }
+    details.section.font .btn:hover { background: #fff; }
+    details.section.font .btn:focus-visible { outline-color: var(--light); }
 
     .templates { margin-top: 56px; }
     .templates h2 { color: var(--purple); font-size: clamp(1.4rem, 3vw, 1.75rem); font-weight: 600; margin: 0 0 20px; text-align: center; }
@@ -132,7 +135,7 @@
       .tcard { padding: 10px; }
       .tcard h3 { font-size: .9rem; }
       .tcard .btn { font-size: .85rem; padding: 9px 8px; }
-      .font-card { flex-direction: column; align-items: stretch; padding: 20px; }
+      .font-body { flex-direction: column; align-items: stretch; }
       .item { flex-direction: column; align-items: stretch; padding: 18px; }
       .actions { flex-direction: column; }
       .btn { width: 100%; min-width: 0; }
@@ -152,6 +155,22 @@
       <p>Welcome to the Myeloma Australia resource hub for nurses. Here you'll find presentations to support education for health professionals, as well as for patients and their carers.</p>
       <p>Open a category below to see what's available. Each resource can be downloaded as a PowerPoint, or opened in Canva so you can tailor it to your own setting.</p>
     </section>
+
+    <details class="section font">
+      <summary>
+        <span>Poppins font family</span>
+        <span class="chev" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </summary>
+      <div class="items">
+        <div class="font-body">
+          <p>Our presentations use Poppins. Install it so the PowerPoint files display as designed.</p>
+          <div class="actions">
+            <a class="btn" href="https://fonts.google.com/specimen/Poppins" target="_blank" rel="noopener">Download from Google Fonts</a>
+            <a class="btn" href="assets/Poppins.zip" download>Download for computer</a>
+          </div>
+        </div>
+      </div>
+    </details>
 
     <details class="section">
       <summary>
@@ -178,17 +197,6 @@
         <p class="empty">Resources for patients and carers are coming soon.</p>
       </div>
     </details>
-
-    <section class="font-card" aria-labelledby="font-heading">
-      <div>
-        <h2 id="font-heading">Poppins font family</h2>
-        <p>Our presentations use Poppins. Install it so the PowerPoint files display as designed.</p>
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://fonts.google.com/specimen/Poppins" target="_blank" rel="noopener">Download from Google Fonts</a>
-        <a class="btn" href="assets/Poppins.zip" download>Download for computer</a>
-      </div>
-    </section>
 
     <section class="templates" aria-labelledby="templates-heading">
       <h2 id="templates-heading">Additional templates &amp; posters</h2>
