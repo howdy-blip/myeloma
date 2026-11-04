@@ -88,9 +88,10 @@
     details.section.font > summary { color: var(--light); }
     details.section.font > summary:focus-visible { outline-color: var(--light); }
     details.section.font .chev { background: var(--light); color: var(--pink); }
-    .font-body { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--light); }
+    .font-body { display: flex; flex-direction: column; gap: 18px; color: var(--light); }
     .font-body p { margin: 0; }
-    .font-body .actions { flex: none; }
+    .font-body .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .font-body .btn { min-width: 0; width: 100%; }
     details.section.font .btn { background: var(--light); color: var(--pink); }
     details.section.font .btn:hover { background: #fff; }
     details.section.font .btn:focus-visible { outline-color: var(--light); }
@@ -135,7 +136,7 @@
       .tcard { padding: 10px; }
       .tcard h3 { font-size: .9rem; }
       .tcard .btn { font-size: .85rem; padding: 9px 8px; }
-      .font-body { flex-direction: column; align-items: stretch; }
+      .font-body .actions { grid-template-columns: 1fr; gap: 12px; }
       .item { flex-direction: column; align-items: stretch; padding: 18px; }
       .actions { flex-direction: column; }
       .btn { width: 100%; min-width: 0; }
