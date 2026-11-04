@@ -82,6 +82,16 @@
     .btn:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
     .empty { margin: 0; padding: 4px 4px 0; font-style: italic; opacity: .8; }
 
+    .font-card {
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      background: rgba(248, 243, 243, 0.92);
+      border: 2px solid var(--purple); border-radius: 14px;
+      padding: 22px 28px; margin-top: 36px;
+    }
+    .font-card h2 { margin: 0 0 4px; color: var(--purple); font-size: 1.3rem; font-weight: 600; }
+    .font-card p { margin: 0; font-size: .92rem; }
+    .font-card .actions { flex: none; flex-wrap: nowrap; }
+
     footer { text-align: center; font-size: .85rem; margin-top: 48px; opacity: .8; }
     footer a { color: var(--purple); }
 
@@ -90,6 +100,7 @@
       .wrap { padding: 32px 16px 56px; }
       details.section > summary { padding: 18px 20px; }
       .items { padding: 0 16px 20px; }
+      .font-card { flex-direction: column; align-items: stretch; padding: 20px; }
       .item { flex-direction: column; align-items: stretch; padding: 18px; }
       .actions { flex-direction: column; }
       .btn { width: 100%; min-width: 0; }
@@ -135,6 +146,17 @@
         <p class="empty">Resources for patients and carers are coming soon.</p>
       </div>
     </details>
+
+    <section class="font-card" aria-labelledby="font-heading">
+      <div>
+        <h2 id="font-heading">Poppins font family</h2>
+        <p>Our presentations use Poppins. Install it so the PowerPoint files display as designed.</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://fonts.google.com/specimen/Poppins" target="_blank" rel="noopener">Download from Google Fonts</a>
+        <a class="btn" href="assets/Poppins.zip" download>Download for computer</a>
+      </div>
+    </section>
 
     <footer>
       &copy; Myeloma Australia &middot; <a href="https://myeloma.org.au" target="_blank" rel="noopener">myeloma.org.au</a>
