@@ -92,6 +92,34 @@
     .font-card p { margin: 0; font-size: .92rem; }
     .font-card .actions { flex: none; flex-wrap: nowrap; }
 
+    .templates { margin-top: 56px; }
+    .templates h2 { color: var(--purple); font-size: clamp(1.4rem, 3vw, 1.75rem); font-weight: 600; margin: 0 0 20px; text-align: center; }
+    .tgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 18px; }
+    .tcard {
+      display: flex; flex-direction: column; gap: 12px;
+      background: rgba(248, 243, 243, 0.92);
+      border: 1.5px solid var(--purple); border-radius: 12px; padding: 14px;
+    }
+    .tcard .thumb {
+      display: block; text-decoration: none; aspect-ratio: 210 / 297; border-radius: 6px; overflow: hidden;
+      background: #fff; box-shadow: 0 2px 10px rgba(69, 5, 125, .12);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .tcard .thumb:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(69, 5, 125, .2); }
+    .tcard .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    .tcard h3 { margin: 0; color: var(--purple); font-size: 1rem; font-weight: 600; line-height: 1.35; flex: 1; }
+    .tcard .btn { min-width: 0; width: 100%; padding: 10px 14px; font-size: .92rem; }
+    .cert {
+      height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+      padding: 12px; text-align: center;
+      border: 8px solid transparent;
+      background: linear-gradient(#fff, #fff) padding-box, linear-gradient(135deg, #ff3d6e, #c400c4 40%, #ffb05c 70%, #82f0a0) border-box;
+    }
+    .tcard .thumb .cert img { width: 75%; height: auto; object-fit: contain; }
+    .cert-title { color: var(--purple); font-weight: 600; font-size: 1rem; line-height: 1.25; }
+    .cert-line { width: 60%; height: 1.5px; background: var(--purple); opacity: .4; }
+    .cert-sub { font-size: .75rem; color: var(--text); opacity: .7; }
+
     footer { text-align: center; font-size: .85rem; margin-top: 48px; opacity: .8; }
     footer a { color: var(--purple); }
 
@@ -100,6 +128,10 @@
       .wrap { padding: 32px 16px 56px; }
       details.section > summary { padding: 18px 20px; }
       .items { padding: 0 16px 20px; }
+      .tgrid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .tcard { padding: 10px; }
+      .tcard h3 { font-size: .9rem; }
+      .tcard .btn { font-size: .85rem; padding: 9px 8px; }
       .font-card { flex-direction: column; align-items: stretch; padding: 20px; }
       .item { flex-direction: column; align-items: stretch; padding: 18px; }
       .actions { flex-direction: column; }
@@ -155,6 +187,44 @@
       <div class="actions">
         <a class="btn" href="https://fonts.google.com/specimen/Poppins" target="_blank" rel="noopener">Download from Google Fonts</a>
         <a class="btn" href="assets/Poppins.zip" download>Download for computer</a>
+      </div>
+    </section>
+
+    <section class="templates" aria-labelledby="templates-heading">
+      <h2 id="templates-heading">Additional templates &amp; posters</h2>
+      <div class="tgrid">
+        <article class="tcard">
+          <a class="thumb" href="https://www.canva.com/brand/brand-templates/EAG7iHAsKmE" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <span class="cert">
+              <img src="assets/myeloma-australia-logo.png" alt="">
+              <span class="cert-title">Certificate of Appreciation</span>
+              <span class="cert-line"></span>
+              <span class="cert-sub">Canva template</span>
+            </span>
+          </a>
+          <h3>Certificate of appreciation</h3>
+          <a class="btn" href="https://www.canva.com/brand/brand-templates/EAG7iHAsKmE" target="_blank" rel="noopener">Open in Canva</a>
+        </article>
+        <article class="tcard">
+          <a class="thumb" href="assets/templates/Nurselink-promotional-poster.pdf" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/previews/Nurselink-promotional-poster.jpg" alt="" loading="lazy"></a>
+          <h3>Nurselink promotional poster</h3>
+          <a class="btn" href="assets/templates/Nurselink-promotional-poster.pdf" download>Download PDF</a>
+        </article>
+        <article class="tcard">
+          <a class="thumb" href="assets/templates/Merchandise-for-groups-and-seminars.pdf" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/previews/Merchandise-for-groups-and-seminars.jpg" alt="" loading="lazy"></a>
+          <h3>Merchandise for groups &amp; seminars</h3>
+          <a class="btn" href="assets/templates/Merchandise-for-groups-and-seminars.pdf" download>Download PDF</a>
+        </article>
+        <article class="tcard">
+          <a class="thumb" href="assets/templates/How-to-add-events-to-the-Outlook-events-calendar.pdf" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/previews/How-to-add-events-to-the-Outlook-events-calendar.jpg" alt="" loading="lazy"></a>
+          <h3>How to add events to the Outlook events calendar</h3>
+          <a class="btn" href="assets/templates/How-to-add-events-to-the-Outlook-events-calendar.pdf" download>Download PDF</a>
+        </article>
+        <article class="tcard">
+          <a class="thumb" href="assets/templates/Home-office-3CX-setup.pdf" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="assets/previews/Home-office-3CX-setup.jpg" alt="" loading="lazy"></a>
+          <h3>Home office 3CX setup</h3>
+          <a class="btn" href="assets/templates/Home-office-3CX-setup.pdf" download>Download PDF</a>
+        </article>
       </div>
     </section>
 
