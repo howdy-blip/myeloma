@@ -6,7 +6,7 @@
     - emails brand@ and sends a confirmation to the person who submitted
   Paste the web app URL from Apps Script (Deploy > Manage deployments) below.
 */
-const SCRIPT_URL = "PASTE_APPS_SCRIPT_WEB_APP_URL_HERE";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwqYOHe4YCcVz4E0GDpUS8-jXzZmbTlXgdk8q5OflP3bK_i8MM-v1albojw5nvd_0G3og/exec";
 
 const MAX_FILE_MB = 10;      // per file
 const MAX_TOTAL_MB = 20;     // all files together
