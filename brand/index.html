@@ -127,6 +127,79 @@
     footer { text-align: center; font-size: .85rem; margin-top: 48px; opacity: .8; }
     footer a { color: var(--purple); }
 
+
+    /* Year at a glance timeline */
+    .year {
+      margin-top: 20px;
+      background: rgba(248, 243, 243, 0.94);
+      border: 2px solid var(--purple); border-radius: 14px;
+      padding: 24px 26px 26px;
+    }
+    .year-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 10px 20px; margin-bottom: 6px; }
+    .year-head h3 { margin: 0; color: var(--purple); font-size: 1.3rem; font-weight: 600; }
+    .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; font-size: .82rem; }
+    .legend li { display: inline-flex; align-items: center; gap: 6px; }
+    .legend i, .ev i { width: 11px; height: 11px; border-radius: 50%; flex: none; display: inline-block; }
+    .c-plan { background: var(--purple); }
+    .c-event { background: var(--pink); }
+    .c-appeal { background: #f0803c; }
+    .c-report { background: #9a8fb0; }
+    .yr-hint { margin: 0 0 4px; font-size: .85rem; opacity: .75; }
+
+    .chart { position: relative; height: 170px; margin: 6px 0 0; }
+    .chart svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .chart .wave { fill: none; stroke: url(#yrGrad); stroke-width: 6; stroke-linecap: round; }
+    .chart .wave-soft { fill: none; stroke: url(#yrGrad); stroke-width: 18; opacity: .14; stroke-linecap: round; }
+    .chart .now-line { stroke: var(--purple); stroke-width: 1.5; stroke-dasharray: 3 5; opacity: .45; }
+    .mdot {
+      position: absolute; transform: translate(-50%, -50%);
+      width: 22px; height: 22px; padding: 0; border-radius: 50%;
+      border: 3px solid #fff; cursor: pointer;
+      box-shadow: 0 2px 6px rgba(69, 5, 125, .25);
+      transition: width .2s ease, height .2s ease, box-shadow .2s ease;
+    }
+    .mdot:hover { width: 28px; height: 28px; }
+    .mdot[aria-selected="true"] { width: 34px; height: 34px; box-shadow: 0 0 0 4px rgba(69, 5, 125, .18), 0 4px 12px rgba(69, 5, 125, .35); }
+    .mdot:focus-visible { outline: 3px solid var(--purple); outline-offset: 4px; }
+    .mdot .ring { position: absolute; inset: -9px; border-radius: 50%; border: 2px solid currentColor; opacity: .55; }
+    .now-tag {
+      position: absolute; transform: translate(-50%, 0); top: 0;
+      font-size: .68rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+      color: #fff; background: var(--purple); padding: 2px 8px; border-radius: 999px; white-space: nowrap;
+    }
+    .months { display: grid; grid-template-columns: repeat(12, 1fr); margin-top: 4px; }
+    .months button {
+      font: inherit; font-size: .8rem; font-weight: 500; color: var(--text); opacity: .7;
+      background: none; border: 0; padding: 6px 0; cursor: pointer; border-radius: 6px;
+    }
+    .months button[aria-selected="true"] { color: var(--purple); font-weight: 700; opacity: 1; }
+    .months button:focus-visible { outline: 2px solid var(--purple); }
+    .months .m-short { display: none; }
+
+    .detail {
+      margin-top: 16px; border-top: 1.5px solid rgba(69, 5, 125, .2); padding-top: 18px;
+      display: grid; grid-template-columns: 170px 1fr; gap: 16px 24px; align-items: start;
+    }
+    .detail h4 { margin: 0; color: var(--purple); font-size: 1.5rem; font-weight: 600; line-height: 1.1; }
+    .detail .nav { display: flex; gap: 8px; margin-top: 12px; }
+    .detail .nav button {
+      width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--purple);
+      background: var(--bg); color: var(--purple); font-size: 1rem; cursor: pointer; line-height: 1;
+    }
+    .detail .nav button:hover { background: var(--purple); color: #fff; }
+    .evs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .ev {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: #fff; border-radius: 10px; padding: 12px 16px;
+      border-left: 5px solid var(--ec);
+      animation: evIn .35s ease both;
+    }
+    .ev i { margin-top: 7px; background: var(--ec); }
+    .ev strong { display: block; font-weight: 600; line-height: 1.35; }
+    .ev span { display: block; font-size: .85rem; opacity: .8; }
+    @keyframes evIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .ev { animation: none; } .mdot { transition: none; } }
+
     @media (max-width: 860px) {
       .tgrid { grid-template-columns: 1fr; }
     }
@@ -138,6 +211,17 @@
       .feature { grid-template-columns: 1fr; padding: 22px 20px; }
       .feature .btn { width: 100%; min-width: 0; }
       .days { grid-template-columns: 1fr; }
+      .year { padding: 20px 16px 20px; }
+      .chart { height: 140px; }
+      .mdot { width: 16px; height: 16px; border-width: 2px; }
+      .mdot:hover { width: 18px; height: 18px; }
+      .mdot[aria-selected="true"] { width: 24px; height: 24px; }
+      .mdot .ring { inset: -6px; }
+      .months .m-long { display: none; }
+      .months .m-short { display: inline; }
+      .detail { grid-template-columns: 1fr; }
+      .detail .head-row { display: flex; justify-content: space-between; align-items: center; }
+      .detail .nav { margin-top: 0; }
     }
   </style>
 </head>
@@ -233,6 +317,45 @@
         </div>
         <a class="btn" data-form="calendar" href="https://app.getrella.com/7GvwuU8IsPsexjZbFXzBbV/s/4G4ePZOT5hQIqBQ1zHpZ6k/p/38tbFASHKrtSx42xUhSaaj" target="_blank" rel="noopener">View calendar</a>
       </div>
+
+      <div class="year" id="year">
+        <div class="year-head">
+          <h3>The year at a glance</h3>
+          <ul class="legend" aria-label="Key">
+            <li><i class="c-plan"></i>Planning</li>
+            <li><i class="c-event"></i>Events</li>
+            <li><i class="c-appeal"></i>Appeals &amp; campaigns</li>
+            <li><i class="c-report"></i>Reporting</li>
+          </ul>
+        </div>
+        <p class="yr-hint">Tap a month to see what's on.</p>
+        <div class="chart" id="yrChart">
+          <svg viewBox="0 0 1200 170" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="yrGrad" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0" stop-color="#8fe3a0"/>
+                <stop offset=".3" stop-color="#45057d"/>
+                <stop offset=".62" stop-color="#e5208c"/>
+                <stop offset="1" stop-color="#f0803c"/>
+              </linearGradient>
+            </defs>
+            <line class="now-line" id="yrNowLine" x1="0" x2="0" y1="22" y2="170" vector-effect="non-scaling-stroke"/>
+            <path class="wave-soft" id="yrWaveSoft" vector-effect="non-scaling-stroke"/>
+            <path class="wave" id="yrWave" vector-effect="non-scaling-stroke"/>
+          </svg>
+        </div>
+        <div class="months" role="tablist" aria-label="Months" id="yrMonths"></div>
+        <div class="detail" id="yrDetail" role="tabpanel" aria-live="polite">
+          <div class="head-row">
+            <h4 id="yrTitle"></h4>
+            <div class="nav">
+              <button type="button" id="yrPrev" aria-label="Previous month">&#8592;</button>
+              <button type="button" id="yrNext" aria-label="Next month">&#8594;</button>
+            </div>
+          </div>
+          <ul class="evs" id="yrList"></ul>
+        </div>
+      </div>
     </section>
 
     <section aria-labelledby="team-heading">
@@ -263,5 +386,99 @@
     </footer>
   </div>
 
+
+  <script>
+  (function () {
+    var PLAN = "My Greatest Call, National Myeloma Month, My Greatest Walk and Gather Round Breakfast";
+    var C = { plan: "var(--purple)", event: "var(--pink)", appeal: "#f0803c", report: "#9a8fb0" };
+    var M = [
+      { n: "January",   e: [["plan", "Event planning", PLAN]] },
+      { n: "February",  e: [["event", "My Greatest Call Lunch"]] },
+      { n: "March",     e: [["event", "National Myeloma Month"], ["event", "My Greatest Walk"]] },
+      { n: "April",     e: [["event", "Gather Round Breakfast"]] },
+      { n: "May",       e: [["appeal", "Tax Appeal", "Runs May to June"], ["event", "National Myeloma Summit"]] },
+      { n: "June",      e: [["appeal", "Tax Appeal", "Runs May to June"]] },
+      { n: "July",      e: [["report", "Reporting & planning", "July to August"]] },
+      { n: "August",    e: [["report", "Reporting & planning", "July to August"]] },
+      { n: "September", e: [["event", "Moonee Valley Racing Carnival", "Runs September to October"]] },
+      { n: "October",   e: [["event", "Moonee Valley Racing Carnival", "Runs September to October"]] },
+      { n: "November",  e: [["plan", "Event planning", PLAN], ["appeal", "Christmas Community Campaign", "Runs November to December"]] },
+      { n: "December",  e: [["appeal", "Christmas Community", "Runs November to December"]] }
+    ];
+    // Wave height: events and appeals peak, planning and reporting sit lower
+    var W = { event: 3, appeal: 3, plan: 1.6, report: 0.8 };
+    var chart = document.getElementById("yrChart"), months = document.getElementById("yrMonths");
+    var now = new Date().getMonth(), sel = now, dots = [], tabs = [];
+    var pts = M.map(function (m, i) {
+      var v = 0; m.e.forEach(function (e) { v = Math.max(v, W[e[0]]); });
+      v += (m.e.length - 1) * 0.6;
+      return [ (i + 0.5) * 100, 150 - v * 30 ];
+    });
+    function path(p) {
+      var d = "M0," + p[0][1] + " L" + p[0][0] + "," + p[0][1];
+      for (var i = 1; i < p.length; i++) {
+        var a = p[i - 1], b = p[i], mx = (a[0] + b[0]) / 2;
+        d += " C" + mx + "," + a[1] + " " + mx + "," + b[1] + " " + b[0] + "," + b[1];
+      }
+      return d + " L1200," + p[p.length - 1][1];
+    }
+    var d = path(pts);
+    document.getElementById("yrWave").setAttribute("d", d);
+    document.getElementById("yrWaveSoft").setAttribute("d", d);
+    var nl = document.getElementById("yrNowLine");
+    nl.setAttribute("x1", pts[now][0]); nl.setAttribute("x2", pts[now][0]); nl.setAttribute("y2", pts[now][1]);
+    var tag = document.createElement("span");
+    tag.className = "now-tag"; tag.textContent = "This month";
+    tag.style.left = (pts[now][0] / 12) + "%";
+    chart.appendChild(tag);
+
+    M.forEach(function (m, i) {
+      var main = m.e[0][0], b = document.createElement("button");
+      b.type = "button"; b.className = "mdot"; b.tabIndex = -1;
+      b.setAttribute("aria-label", m.n + ": " + m.e.map(function (e) { return e[1]; }).join(", "));
+      b.style.left = (pts[i][0] / 12) + "%";
+      b.style.top = (pts[i][1] / 170 * 100) + "%";
+      b.style.background = C[main];
+      if (m.e.length > 1 && m.e[1][0] !== main) {
+        var r = document.createElement("span"); r.className = "ring"; r.style.color = C[m.e[1][0]]; b.appendChild(r);
+      }
+      b.addEventListener("click", function () { show(i, true); });
+      b.addEventListener("mouseenter", function () { if (window.matchMedia("(hover: hover)").matches) show(i); });
+      chart.appendChild(b); dots.push(b);
+
+      var t = document.createElement("button");
+      t.type = "button"; t.setAttribute("role", "tab");
+      t.innerHTML = '<span class="m-long">' + m.n.slice(0, 3) + '</span><span class="m-short">' + m.n[0] + '</span>';
+      t.setAttribute("aria-label", m.n);
+      t.addEventListener("click", function () { show(i, true); });
+      t.addEventListener("keydown", function (ev) {
+        var k = ev.key, j = null;
+        if (k === "ArrowRight") j = (i + 1) % 12;
+        else if (k === "ArrowLeft") j = (i + 11) % 12;
+        else if (k === "Home") j = 0;
+        else if (k === "End") j = 11;
+        if (j !== null) { ev.preventDefault(); show(j, true, true); }
+      });
+      months.appendChild(t); tabs.push(t);
+    });
+
+    function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+    function show(i, force, focus) {
+      if (i === sel && !force && dots[i].getAttribute("aria-selected") === "true") return;
+      sel = i;
+      dots.forEach(function (b, j) { b.setAttribute("aria-selected", j === i); });
+      tabs.forEach(function (t, j) { t.setAttribute("aria-selected", j === i); t.tabIndex = j === i ? 0 : -1; });
+      if (focus) tabs[i].focus();
+      document.getElementById("yrTitle").textContent = M[i].n;
+      document.getElementById("yrList").innerHTML = M[i].e.map(function (e, k) {
+        return '<li class="ev" style="--ec:' + C[e[0]] + ';animation-delay:' + (k * 70) + 'ms"><i></i><div><strong>' +
+          esc(e[1]) + '</strong>' + (e[2] ? '<span>' + esc(e[2]) + '</span>' : '') + '</div></li>';
+      }).join("");
+    }
+    document.getElementById("yrPrev").addEventListener("click", function () { show((sel + 11) % 12, true); });
+    document.getElementById("yrNext").addEventListener("click", function () { show((sel + 1) % 12, true); });
+    show(now, true);
+  })();
+  </script>
 </body>
 </html>
