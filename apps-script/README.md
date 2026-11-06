@@ -7,6 +7,7 @@ The forms at `/brand/forms/` send each submission to a small Google Apps Script.
 - **Google account:** brandmyeloma@gmail.com
 - **Sheet:** "Brand Engagement Hub - Form submissions"
 - **Apps Script project:** "Brand Engagement Hub - Forms" (standalone, linked by `SHEET_ID`)
+- **Notifications go to:** brand@myeloma.org.au and howdy@broadcollective.com.au (`NOTIFY_EMAIL`)
 - **Web app URL:** set in `brand/forms/assets/forms.js`
 
 The steps below are for setting it up from scratch.
