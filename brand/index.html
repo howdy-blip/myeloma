@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brand Engagement Hub | Myeloma Australia</title>
+  <meta name="description" content="Myeloma Australia's one-stop shop for marketing and communications: briefing forms, merchandise orders, logo approvals, the events calendar and the team.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple: #45057d;
+      --purple-dark: #2f0357;
+      --bg: #f8f3f3;
+      --pink: #e5208c;
+      --light: #faf4f4;
+      --text: #2b2433;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg) url("../nurses/assets/background.jpg") center / cover no-repeat fixed;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    header { text-align: center; margin-bottom: 40px; }
+    header img { width: 260px; max-width: 70%; height: auto; }
+
+    .intro { text-align: center; max-width: 720px; margin: 0 auto 48px; }
+    .intro h1 { color: var(--purple); font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 600; margin: 0 0 12px; line-height: 1.2; }
+    .intro p { margin: 0 0 12px; font-size: 1.02rem; }
+
+    h2.sec {
+      color: var(--purple); font-size: clamp(1.4rem, 3vw, 1.75rem); font-weight: 600;
+      margin: 0 0 20px; text-align: center;
+    }
+    section { margin-bottom: 56px; }
+
+    /* Form cards */
+    .fgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .fcard {
+      display: flex; flex-direction: column; gap: 12px;
+      background: rgba(248, 243, 243, 0.92);
+      border: 2px solid var(--purple); border-radius: 14px;
+      padding: 24px 26px;
+    }
+    .fcard h3 { margin: 0; color: var(--purple); font-size: 1.3rem; font-weight: 600; line-height: 1.3; }
+    .fcard p { margin: 0; }
+    .fcard .body { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: .8rem; font-weight: 500; line-height: 1.2;
+      padding: 5px 12px; border-radius: 999px;
+      border: 1.5px solid var(--purple); color: var(--purple); background: var(--bg);
+    }
+    .tag.lead { background: var(--purple); color: #fff; }
+    .tag svg { flex: none; }
+
+    .btn {
+      display: inline-block; text-align: center; text-decoration: none;
+      background: var(--purple); color: #fff;
+      font-family: inherit; font-weight: 500; font-size: 1rem;
+      padding: 12px 28px; border-radius: 8px; border: 0; cursor: pointer;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .btn:hover { background: var(--purple-dark); transform: translateY(-1px); }
+    .btn:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
+    .fcard .btn { width: 100%; margin-top: 6px; }
+
+    .help {
+      margin-top: 20px; text-align: center;
+      background: rgba(248, 243, 243, 0.92);
+      border: 1.5px dashed var(--purple); border-radius: 12px;
+      padding: 16px 22px;
+    }
+    .help p { margin: 0; }
+    a.mail { color: var(--purple); font-weight: 600; }
+
+    /* Pink feature card (matches the nurses font section) */
+    .feature {
+      background: var(--pink); color: var(--light);
+      border: 2px solid var(--pink); border-radius: 14px;
+      padding: 26px 28px;
+      display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center;
+    }
+    .feature h2 { margin: 0 0 8px; font-size: clamp(1.3rem, 3vw, 1.75rem); font-weight: 600; line-height: 1.2; }
+    .feature p { margin: 0; }
+    .feature p + p { margin-top: 8px; }
+    .feature a.mail { color: var(--light); }
+    .feature .btn { background: var(--light); color: var(--pink); min-width: 210px; }
+    .feature .btn:hover { background: #fff; }
+    .feature .btn:focus-visible { outline-color: var(--light); }
+
+    /* Team */
+    .days {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;
+    }
+    .day {
+      background: var(--purple); color: #fff; border-radius: 12px;
+      padding: 16px 22px; display: flex; flex-direction: column; gap: 2px;
+    }
+    .day strong { font-weight: 600; font-size: 1.05rem; }
+    .day span { opacity: .9; font-size: .95rem; }
+    .tgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .person {
+      display: flex; flex-direction: column; gap: 10px;
+      background: rgba(248, 243, 243, 0.92);
+      border: 1.5px solid var(--purple); border-radius: 12px; padding: 22px;
+    }
+    .avatar {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--purple); color: #fff;
+      display: grid; place-items: center; font-weight: 600; font-size: 1.1rem; letter-spacing: .02em;
+    }
+    .person h3 { margin: 0; color: var(--purple); font-size: 1.1rem; font-weight: 600; line-height: 1.3; }
+    .person .role { margin: -6px 0 0; font-size: .85rem; font-weight: 500; opacity: .8; }
+    .person a.mail { font-size: .85rem; font-weight: 500; word-break: break-all; }
+    .person p { margin: 0; font-size: .93rem; }
+
+    footer { text-align: center; font-size: .85rem; margin-top: 48px; opacity: .8; }
+    footer a { color: var(--purple); }
+
+    @media (max-width: 860px) {
+      .tgrid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      body { background-attachment: scroll; }
+      .wrap { padding: 32px 16px 56px; }
+      .fgrid { grid-template-columns: 1fr; gap: 16px; }
+      .fcard { padding: 20px; }
+      .feature { grid-template-columns: 1fr; padding: 22px 20px; }
+      .feature .btn { width: 100%; min-width: 0; }
+      .days { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a href="https://myeloma.org.au" aria-label="Myeloma Australia website">
+        <img src="../nurses/assets/myeloma-australia-logo.png" alt="Myeloma Australia" width="1000" height="433">
+      </a>
+    </header>
+
+    <section class="intro">
+      <h1>Brand Engagement Hub</h1>
+      <p>Your one-stop shop for all things marketing and communications.</p>
+      <p>Submit a brief, order merchandise, request logo approval, check what's coming up and find the right person to talk to.</p>
+    </section>
+
+    <!--
+      FORMS
+      Buttons currently point to the existing monday.com / Google forms.
+      When the new forms are built (each on its own page under brand/forms/,
+      saving to Google Sheets and sending an email), swap the href on the
+      matching data-form button.
+    -->
+    <section aria-labelledby="forms-heading">
+      <h2 class="sec" id="forms-heading">Your briefing forms</h2>
+      <div class="fgrid">
+
+        <article class="fcard">
+          <h3>Creative brief</h3>
+          <div class="tags">
+            <span class="tag">Myeloma Australia staff</span>
+            <span class="tag lead"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 4.5V8l2.5 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Min. 2 weeks' notice</span>
+          </div>
+          <div class="body">
+            <p>Covers all marketing campaigns, Canva templates and design requests.</p>
+            <p>Please submit at least 2 weeks before your desired due date.</p>
+          </div>
+          <a class="btn" data-form="creative" href="https://wkf.ms/42u0uVm" target="_blank" rel="noopener">Complete brief</a>
+        </article>
+
+        <article class="fcard">
+          <h3>Event brief</h3>
+          <div class="tags">
+            <span class="tag">Myeloma Australia staff</span>
+            <span class="tag lead"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 4.5V8l2.5 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Min. 1 week's notice</span>
+          </div>
+          <div class="body">
+            <p>For anyone wanting an event created in Humanitix.</p>
+            <p>Please submit at least 1 week before your desired tickets-on-sale date.</p>
+          </div>
+          <a class="btn" data-form="event" href="https://wkf.ms/3Jrvkr9" target="_blank" rel="noopener">Complete brief</a>
+        </article>
+
+        <article class="fcard">
+          <h3>Promotional &amp; event merchandise</h3>
+          <div class="tags">
+            <span class="tag">Myeloma Australia staff</span>
+          </div>
+          <div class="body">
+            <p>Need promotional items or merchandise for your event or stall (e.g. pens, stickers, new staff packs, shirts)? Complete this order form.</p>
+            <p>Please allow for delivery times if we don't have the item in stock.</p>
+          </div>
+          <a class="btn" data-form="merch" href="https://wkf.ms/4o7CWOM" target="_blank" rel="noopener">Complete order</a>
+        </article>
+
+        <article class="fcard">
+          <h3>Logo use approval</h3>
+          <div class="tags">
+            <span class="tag">Community members, partners &amp; businesses</span>
+          </div>
+          <div class="body">
+            <p>For anyone outside Myeloma Australia wanting to use the Myeloma Australia logo.</p>
+            <p>This helps us keep the brand consistent wherever it appears.</p>
+          </div>
+          <a class="btn" data-form="logo" href="https://docs.google.com/forms/d/e/1FAIpQLSdYyhcp86qzvlqUU9k35kIS9hzzO4dHxSmfKcxP49iBk4_9FA/viewform" target="_blank" rel="noopener">Request approval</a>
+        </article>
+
+      </div>
+      <div class="help">
+        <p>Questions about any of the above? Email <a class="mail" href="mailto:brand@myeloma.org.au">brand@myeloma.org.au</a></p>
+      </div>
+    </section>
+
+    <section aria-labelledby="cal-heading">
+      <div class="feature">
+        <div>
+          <h2 id="cal-heading">Calendar of events</h2>
+          <p>A brief overview of Myeloma Australia events, reminders, campaigns and more across the year.</p>
+          <p>Want something added? Email <a class="mail" href="mailto:brand@myeloma.org.au">brand@myeloma.org.au</a></p>
+        </div>
+        <a class="btn" data-form="calendar" href="https://myelomabrand.my.canva.site/#calendar-of-events" target="_blank" rel="noopener">View calendar</a>
+      </div>
+    </section>
+
+    <section aria-labelledby="team-heading">
+      <h2 class="sec" id="team-heading">The team behind it all</h2>
+
+      <div class="days" aria-label="Days in the office">
+        <div class="day"><strong>Emma-Jane (EJ)</strong><span>Monday, Thursday &amp; Friday</span></div>
+        <div class="day"><strong>Olympia</strong><span>Monday, Tuesday, Thursday &amp; every 2nd Friday</span></div>
+      </div>
+
+      <div class="tgrid">
+        <article class="person">
+          <span class="avatar" aria-hidden="true">EJ</span>
+          <h3>Emma-Jane Furphy</h3>
+          <a class="mail" href="mailto:ej.furphy@myeloma.org.au">ej.furphy@myeloma.org.au</a>
+          <p>EJ leads the team and is your main point of contact for media management and public relations, co-shared Canva designing, business strategy, awareness growth, partnerships, event management and more.</p>
+        </article>
+        <article class="person">
+          <span class="avatar" aria-hidden="true">OB</span>
+          <h3>Olympia Boxer</h3>
+          <a class="mail" href="mailto:olympia.boxer@myeloma.org.au">olympia.boxer@myeloma.org.au</a>
+          <p>Olympia is your main point of contact for Humanitix event creation, raffles, merchandise, co-shared Canva designing, social media management, co-event management and administration.</p>
+        </article>
+        <article class="person">
+          <span class="avatar" aria-hidden="true">KT</span>
+          <h3>Kiandra Trickett</h3>
+          <p>Kiandra manages the creation and execution of marketing campaigns, templates, brand management, best practice, co-event management and more.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      &copy; Myeloma Australia &middot; <a href="https://myeloma.org.au" target="_blank" rel="noopener">myeloma.org.au</a>
+    </footer>
+  </div>
+
+</body>
+</html>
