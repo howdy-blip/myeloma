@@ -2,6 +2,15 @@
 
 The forms at `/brand/forms/` send each submission to a small Google Apps Script. The script adds a row to a Google Sheet (one tab per form), saves any uploaded files to Google Drive, emails the brand team and sends a confirmation to the person who submitted.
 
+## Current setup
+
+- **Google account:** brandmyeloma@gmail.com
+- **Sheet:** "Brand Engagement Hub - Form submissions"
+- **Apps Script project:** "Brand Engagement Hub - Forms" (standalone, linked by `SHEET_ID`)
+- **Web app URL:** set in `brand/forms/assets/forms.js`
+
+The steps below are for setting it up from scratch.
+
 This takes about 10 minutes and only needs doing once. Use the Google account that should own the Sheet and send the emails (ideally a shared brand@ account rather than a personal one).
 
 ## 1. Create the Sheet and add the script

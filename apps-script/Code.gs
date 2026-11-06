@@ -15,6 +15,7 @@
 const NOTIFY_EMAIL = "brand@myeloma.org.au";            // who gets new submissions (comma-separate for more)
 const UPLOAD_FOLDER_NAME = "Brand form uploads";        // Drive folder for attachments
 const SENDER_NAME = "Myeloma Australia Brand Team";
+const SHEET_ID = "1NvYrtrc8ui6S8Sk2BBssbhxU3fGfR5vLI02wm7UR-Jg"; // "Brand Engagement Hub - Form submissions" (brandmyeloma@gmail.com)
 // ====================
 
 function doPost(e) {
@@ -45,7 +46,7 @@ function doGet() {
 }
 
 function writeRow_(title, fields, fileLinks) {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = SHEET_ID ? SpreadsheetApp.openById(SHEET_ID) : SpreadsheetApp.getActiveSpreadsheet();
   const sheetName = title.slice(0, 90);
   let sheet = ss.getSheetByName(sheetName);
   const labels = ["Reference", "Submitted"].concat(fields.map(f => f.label)).concat(["Files"]);
