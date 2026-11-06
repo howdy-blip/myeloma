@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promotional &amp; Merchandise Order | Myeloma Australia</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/forms.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a href="../../"><img src="../../../nurses/assets/myeloma-australia-logo.png" alt="Myeloma Australia Brand Engagement Hub" width="1000" height="433"></a>
+      <a class="back" href="../../">&larr; Back to hub</a>
+    </header>
+
+    <main class="card">
+      <h1>Promotional &amp; merchandise order</h1>
+      <div class="lede">
+        <p>Please complete this form for all promotional items and merchandise for events, seminars, new staff and more.</p>
+      </div>
+      <div class="note">
+        <p><strong>Timeline:</strong> if you're requesting new items we may not have in stock, please allow time for ordering, delivery to us and then delivery on to you. This can take more than 6 weeks.</p>
+        <p>For items we already have, please allow a minimum of 2 weeks to collate and ship your order (this includes shipping to you). If you'd like the items well ahead of time, please allow 3 weeks.</p>
+        <p>Not sure what we have? Check the <a href="https://shop.myeloma.org.au" target="_blank" rel="noopener">merchandise shop</a> before submitting.</p>
+      </div>
+
+      <form data-form="merchandise" data-title="Promotional &amp; merchandise order" novalidate>
+        <div class="field" data-required>
+          <label for="m1">What is the purpose of your promotional / merchandise request?<span class="req">*</span></label>
+          <p class="hint">e.g. seminar, event, new staff member</p>
+          <input id="m1" type="text" maxlength="255">
+          <span class="count"></span>
+          <span class="err">Please tell us what it's for.</span>
+        </div>
+
+        <div class="field" data-required>
+          <label for="m2">What is your name?<span class="req">*</span></label>
+          <input id="m2" type="text" autocomplete="name">
+          <span class="err">Please enter your name.</span>
+        </div>
+
+        <div class="field" data-required>
+          <label for="m3">Email<span class="req">*</span></label>
+          <p class="hint">You'll receive an email confirmation of your order.</p>
+          <input id="m3" type="email" autocomplete="email">
+          <span class="err">Please enter a valid email address.</span>
+        </div>
+
+        <div class="field" data-required>
+          <span class="label">Is this for a new staff member order?<span class="req">*</span></span>
+          <div class="checks radios" role="radiogroup">
+            <label class="check"><input type="radio" name="newstaff" value="Yes">Yes</label>
+            <label class="check"><input type="radio" name="newstaff" value="No">No</label>
+          </div>
+          <span class="err">Please choose one.</span>
+        </div>
+
+        <div class="field" data-required>
+          <label for="m5">What items do you need, and how many?<span class="req">*</span></label>
+          <p class="hint">e.g. 200 pens, 100 stickers, 2 shirts (size M). Include sizes where relevant.</p>
+          <textarea id="m5" maxlength="2000"></textarea>
+          <span class="count"></span>
+          <span class="err">Please list the items you need.</span>
+        </div>
+
+        <div class="field" data-required>
+          <label for="m6">Where is the delivery address?<span class="req">*</span></label>
+          <textarea id="m6" maxlength="2000" autocomplete="street-address"></textarea>
+          <span class="count"></span>
+          <span class="err">Please add a delivery address.</span>
+        </div>
+
+        <div class="field" data-required>
+          <label for="m7">What is the desired delivery date?<span class="req">*</span></label>
+          <input id="m7" type="date">
+          <span class="err">Please choose a delivery date.</span>
+        </div>
+
+        <div class="field">
+          <label for="m8">Any other information?</label>
+          <textarea id="m8" maxlength="2000"></textarea>
+          <span class="count"></span>
+        </div>
+
+        <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" tabindex="-1" autocomplete="off"></label></div>
+        <button class="btn" type="submit">Submit order</button>
+        <p class="status" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="done" hidden>
+        <span class="tick"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h2>Order received</h2>
+        <p></p>
+        <a class="btn" href="../../">Back to the hub</a>
+      </div>
+    </main>
+
+    <footer>
+      Questions? Email <a href="mailto:brand@myeloma.org.au">brand@myeloma.org.au</a>
+    </footer>
+  </div>
+  <script src="../assets/forms.js"></script>
+</body>
+</html>
